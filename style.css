@@ -7,23 +7,16 @@ body {
     font-size: 35px;
 }
 
-[data-nb_tab_content] {
-    display: none;
-}
-.active[data-nb_tab_content] {
-    display: block;
-}
-
-ul[data-nb_tab_group_list] {
+ul[data-nb_tab_group_id] {
     list-style: none;
     display: flex;
 }
-ul[data-nb_tab_group_list] li {
+ul[data-nb_tab_group_id] li {
     cursor: pointer;
 }
-ul[data-nb_tab_group_list] li:not(:last-child) {
+ul[data-nb_tab_group_id] li:not(:last-child) {
     margin-right: 30px;
 }
-ul[data-nb_tab_group_list] li.active {
+ul[data-nb_tab_group_id] li[aria-selected="true"] {
     border-bottom: 2px solid teal;
 }

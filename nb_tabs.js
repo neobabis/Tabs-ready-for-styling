@@ -1,31 +1,37 @@
 // ------------------------------
 // Author: Neokazis Charalampos
 // Author URI: NeoBabis.gr
-// Version: 1.0
-// Description: Tutorial Tabs
+// Version: 2.0
+// Description: ARIA tab role
 // ------------------------------
 
-const nb_tab_group_list = document.querySelectorAll("[data-nb_tab_group_list]");
-nb_tab_group_list.forEach((spesific_tab_group) => {
-    const nb_tab_content = document.querySelector(spesific_tab_group.dataset.nb_tab_group_list);
-    const nb_tabs = spesific_tab_group.querySelectorAll("[data-nb_tab_target]");
+const nb_tab_groups_ids = document.querySelectorAll("[data-nb_tab_group_id]");
+if (nb_tab_groups_ids) {
+    nb_tab_groups_ids.forEach((tab_group_id) => {
+        const nb_tabs = tab_group_id.querySelectorAll("[role='tab']");
+        const nb_tab_content = document.querySelector(tab_group_id.dataset.nb_tab_group_id);
+        let nb_mouse_event = tab_group_id.dataset.nb_mouse_event;
+        if (!nb_mouse_event) nb_mouse_event = "click";
 
-    if (nb_tabs) {
-        nb_tabs.forEach((tab) => {
-            tab.addEventListener("click", () => {
-                // Change already acrivated tab content
-                let target_tab_content = document.querySelector(tab.dataset.nb_tab_target);
-                let activated_tab_content = nb_tab_content.querySelector(".active[data-nb_tab_content]");
-                // close previous active content
-                if (activated_tab_content) activated_tab_content.classList.remove("active");
-                // open new tab content
-                target_tab_content.classList.add("active");
+        if (nb_tabs && nb_tab_content) {
+            nb_tabs.forEach((tab) => {
+                tab.addEventListener(nb_mouse_event, () => {
+                    // Change already activated tab content
+                    // hide all tab contents
+                    let all_tab_contents = nb_tab_content.querySelectorAll("[role='tabpanel']");
+                    all_tab_contents.forEach((e) => {
+                        e.setAttribute("hidden", true);
+                    });
+                    // open new tab content
+                    let target_tab_content = document.querySelector("#" + tab.getAttribute("aria-controls"));
+                    target_tab_content.removeAttribute("hidden");
 
-                // Change styling for active tab
-                let activated_tab = spesific_tab_group.querySelector(".active[data-nb_tab_target]");
-                if (activated_tab) activated_tab.classList.remove("active");
-                tab.classList.add("active");
+                    // Change styling for active tab
+                    let activated_tab = tab_group_id.querySelector("[aria-selected='true']");
+                    if (activated_tab) activated_tab.setAttribute("aria-selected", false);
+                    tab.setAttribute("aria-selected", true);
+                });
             });
-        });
-    }
-});
+        }
+    });
+}

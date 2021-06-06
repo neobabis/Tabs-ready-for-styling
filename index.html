@@ -8,41 +8,41 @@
         <script src="nb_tabs.js" defer></script>
     </head>
     <body>
-        <ul data-nb_tab_group_list="#first">
-            <li data-nb_tab_target="#home" class="active">Home</li>
-            <li data-nb_tab_target="#portfolio">Portfolio</li>
-            <li data-nb_tab_target="#about">About</li>
+        <ul data-nb_tab_group_id="#first" data-nb_mouse_event="mouseover" role="tablist">
+            <li role="tab" aria-controls="home" aria-selected="true">Home</li>
+            <li role="tab" aria-controls="portfolio" aria-selected="false">Portfolio</li>
+            <li role="tab" aria-controls="about" aria-selected="false">About</li>
         </ul>
         <div id="first">
-            <div id="home" data-nb_tab_content class="active">
+            <div id="home" role="tabpanel">
                 <h1>Home</h1>
-                <p>This is Home</p>
+                <p>This is home</p>
             </div>
-            <div id="portfolio" data-nb_tab_content>
+            <div id="portfolio" role="tabpanel" hidden>
                 <h1>Portfolio</h1>
-                <p>This is Portfolio</p>
+                <p>This is portfolio</p>
             </div>
-            <div id="about" data-nb_tab_content>
+            <div id="about" role="tabpanel" hidden>
                 <h1>About</h1>
-                <p>This is About</p>
+                <p>This is about</p>
             </div>
         </div>
 
         <br /><br /><br />
 
-        <ul data-nb_tab_group_list="#second">
-            <li data-nb_tab_target="#javascript">JavaScirpt</li>
-            <li data-nb_tab_target="#wordpress" class="active">WordPress</li>
-            <li data-nb_tab_target="#gutenberg">Gutenberg</li>
+        <ul data-nb_tab_group_id="#second" role="tablist">
+            <li role="tab" aria-controls="javascript" aria-selected="false">JavaScirpt</li>
+            <li role="tab" aria-controls="wordpress" aria-selected="true">WordPress</li>
+            <li role="tab" aria-controls="gutenberg" aria-selected="false">Gutenberg</li>
         </ul>
         <div id="second">
-            <div id="javascript" data-nb_tab_content>
+            <div id="javascript" role="tabpanel" hidden>
                 <h1>JavaScirpt</h1>
             </div>
-            <div id="wordpress" data-nb_tab_content class="active">
+            <div id="wordpress" role="tabpanel">
                 <h1>WordPress</h1>
             </div>
-            <div id="gutenberg" data-nb_tab_content>
+            <div id="gutenberg" role="tabpanel" hidden>
                 <h1>Gutenberg</h1>
             </div>
         </div>
