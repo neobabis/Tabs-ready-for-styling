@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tabs</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="nb_tabs.js" defer></script>
+    </head>
+    <body>
+        <ul data-nb_tab_group_list="#first">
+            <li data-nb_tab_target="#home" class="active">Home</li>
+            <li data-nb_tab_target="#portfolio">Portfolio</li>
+            <li data-nb_tab_target="#about">About</li>
+        </ul>
+        <div id="first">
+            <div id="home" data-nb_tab_content class="active">
+                <h1>Home</h1>
+                <p>This is Home</p>
+            </div>
+            <div id="portfolio" data-nb_tab_content>
+                <h1>Portfolio</h1>
+                <p>This is Portfolio</p>
+            </div>
+            <div id="about" data-nb_tab_content>
+                <h1>About</h1>
+                <p>This is About</p>
+            </div>
+        </div>
+
+        <br /><br /><br />
+
+        <ul data-nb_tab_group_list="#second">
+            <li data-nb_tab_target="#javascript">JavaScirpt</li>
+            <li data-nb_tab_target="#wordpress" class="active">WordPress</li>
+            <li data-nb_tab_target="#gutenberg">Gutenberg</li>
+        </ul>
+        <div id="second">
+            <div id="javascript" data-nb_tab_content>
+                <h1>JavaScirpt</h1>
+            </div>
+            <div id="wordpress" data-nb_tab_content class="active">
+                <h1>WordPress</h1>
+            </div>
+            <div id="gutenberg" data-nb_tab_content>
+                <h1>Gutenberg</h1>
+            </div>
+        </div>
+    </body>
+</html>

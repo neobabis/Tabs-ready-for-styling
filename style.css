@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 35px;
+}
+
+[data-nb_tab_content] {
+    display: none;
+}
+.active[data-nb_tab_content] {
+    display: block;
+}
+
+ul[data-nb_tab_group_list] {
+    list-style: none;
+    display: flex;
+}
+ul[data-nb_tab_group_list] li {
+    cursor: pointer;
+}
+ul[data-nb_tab_group_list] li:not(:last-child) {
+    margin-right: 30px;
+}
+ul[data-nb_tab_group_list] li.active {
+    border-bottom: 2px solid teal;
+}
