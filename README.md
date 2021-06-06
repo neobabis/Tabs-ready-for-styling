@@ -1,6 +1,9 @@
 # Tabs-ready-for-styling
 
-Tabs: HTML - CSS - JavaScript
+Tabs
+
+HTML - CSS - JavaScript
+
 Ready for styling
 
 # Δυνατότητες:
